@@ -1,0 +1,35 @@
+
+chembl-----------------------------------------------------------------------------
+
+chembl-Q1(?X, ?Z) :- http://rdf.ebi.ac.uk/terms/chembl#hasTarget(?X, ?Y), http://rdf.ebi.ac.uk/terms/chembl#hasTargetComponent(?Y, ?Z), http://rdf.ebi.ac.uk/terms/chembl#hasTargetComponentDescendant(?W, ?Z), http://rdf.ebi.ac.uk/terms/chembl#TargetComponent(?Z), http://rdf.ebi.ac.uk/terms/chembl#Target(?Y)
+
+chembl-Q2(?W, ?Z) :- http://rdf.ebi.ac.uk/terms/chembl#Activity(?X), http://rdf.ebi.ac.uk/terms/chembl#hasMolecule(?X, ?Y), http://rdf.ebi.ac.uk/terms/chembl#Activity(?Z), http://rdf.ebi.ac.uk/terms/chembl#hasMolecule(?Z, ?Y), http://rdf.ebi.ac.uk/terms/chembl#SmallMolecule(?Y), http://rdf.ebi.ac.uk/terms/chembl#hasActivity(?W, ?X), http://rdf.ebi.ac.uk/terms/chembl#hasActivity(?V, ?Z)
+
+chembl-Q3(?W, ?Z) :- http://rdf.ebi.ac.uk/terms/chembl#Activity(?X), http://rdf.ebi.ac.uk/terms/chembl#hasUnitOnto(?X, ?W), http://rdf.ebi.ac.uk/terms/chembl#hasDocument(?X, ?Y), http://rdf.ebi.ac.uk/terms/chembl#Document(?Y), http://rdf.ebi.ac.uk/terms/chembl#hasJournal(?Y, ?Z), http://rdf.ebi.ac.uk/terms/chembl#Journal(?Z)
+
+
+lubm-----------------------------------------------------------------------------
+
+lubm-Q1(?x, ?z) :- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor(?x, ?y), http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor(?z, ?y), http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor(?w, ?z)
+
+lubm-Q2(?x, ?y) :- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf(?x, ?z), http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department(?z), http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#takesCourse(?x, ?y)
+
+lubm-Q3(?z, ?y) :- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor(?x, ?z), http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor(?x, ?y)
+
+
+reactome-----------------------------------------------------------------------------
+
+reactome-Q1(?Y, ?W) :- http://www.biopax.org/release/biopax-level3.owl#physicalEntity(?W, ?Z), http://www.biopax.org/release/biopax-level3.owl#physicalEntity(?Y, ?Z)
+
+reactome-Q2(?X, ?Z) :- http://www.biopax.org/release/biopax-level3.owl#BiochemicalReaction(?Y), http://www.biopax.org/release/biopax-level3.owl#Complex(?Z), http://www.biopax.org/release/biopax-level3.owl#Pathway(?X), http://www.biopax.org/release/biopax-level3.owl#memberPhysicalEntity(?Z, ?W), http://www.biopax.org/release/biopax-level3.owl#participant(?Y, ?Z), http://www.biopax.org/release/biopax-level3.owl#pathwayComponent(?X, ?Y)
+
+reactome3(?X, ?Z) :- http://www.biopax.org/release/biopax-level3.owl#SequenceSite(?Z), http://www.biopax.org/release/biopax-level3.owl#featureLocation(?X, ?W), http://www.biopax.org/release/biopax-level3.owl#featureLocation(?X, ?Y), http://www.biopax.org/release/biopax-level3.owl#sequenceIntervalBegin(?W, ?Z), http://www.biopax.org/release/biopax-level3.owl#sequenceIntervalBegin(?Y, ?Z), http://www.biopax.org/release/biopax-level3.owl#SequenceSite(?Z)
+
+
+uniprot-----------------------------------------------------------------------------
+
+uniprot-Q1(?X, ?Y) :- http://purl.uniprot.org/core/cellularComponent(?X, ?Z), http://purl.uniprot.org/core/cellularComponent(?Y, ?Z)
+
+uniprot-Q2(?X, ?Z) :- http://purl.uniprot.org/core/Cellular_Component(?Z), http://purl.uniprot.org/core/locatedIn(?X, ?W), http://purl.uniprot.org/core/cellularComponent(?W, ?Z), http://purl.uniprot.org/core/locatedIn(?X, ?Y), http://purl.uniprot.org/core/cellularComponent(?Y, ?Z)
+
+uniprot-Q3(?X, ?Z) :- http://purl.uniprot.org/core/translatedFrom(?W, ?Y), http://purl.uniprot.org/core/Resource(?Y), http://purl.uniprot.org/core/translatedFrom(?W, ?X), http://purl.uniprot.org/core/Resource(?X), http://purl.uniprot.org/core/database(?Y, ?Z), http://purl.uniprot.org/core/database(?X, ?Z), http://purl.uniprot.org/core/Database(?Z)
